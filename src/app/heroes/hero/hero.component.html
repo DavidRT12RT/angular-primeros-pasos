@@ -1,0 +1,44 @@
+<h1>{{this.name}}</h1>
+<dl>
+  <!--Interpolacion de valores-->
+  <td>Nombre:</td>
+  <dd>{{this.name}}</dd> 
+
+  <td>Edad:</td>
+  <dd>{{this.age}}</dd>
+
+  <td>Metodo:</td>
+  <dd>{{this.getHeroDescription()}}</dd>
+
+  <td>Capitalizado:</td>
+  <dd>{{this.capitalizedName}}</dd>
+</dl>
+<div class="d-flex gap-2">
+
+  <button 
+    *ngIf="name !== 'spiderman'"
+    (click)="this.changeHeroName()"
+    class="btn btn-primary" 
+  >
+    Cambiar Nombre
+  </button>
+
+  <button 
+    *ngIf="age !== 25"
+    (click)="this.changeHeroAge()"
+    class="btn btn-primary" 
+  >
+    Cambiar edad
+  </button>
+
+  <button 
+    *ngIf="(age !== 45)"
+    (click)="this.resetForm()"
+    class="btn btn-primary" 
+  >
+    Reset form
+  </button>
+
+</div>
+
+
